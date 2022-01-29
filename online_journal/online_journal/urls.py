@@ -25,6 +25,7 @@ urlpatterns = [
     path('contact/', include('app.urls')),
     path('about/',  include('app.urls')),
     path('login/', include('app.urls')),
+    path('anketa/', include('app.urls')),
     path('logout/', LogoutView.as_view(next_page='/'), name='logout'),
     path('admin/', admin.site.urls),
 ]
