@@ -1,5 +1,5 @@
 from django import forms
-
+from django.contrib.auth.forms import AuthenticationForm
 
 class AnketaForm(forms.Form):
     name = forms.CharField(label='Ваше имя', min_length=2, max_length=100)
@@ -20,3 +20,15 @@ class AnketaForm(forms.Form):
     email = forms.EmailField(label="Ваш e-mail", min_length=7)
     message = forms.CharField(label='Коротко о себе',
                               widget=forms.Textarea({'rows': 12, 'cols': 20}))
+
+
+class BootstrapAuthenticationForm(AuthenticationForm):
+    """Authentication form which uses boostrap CSS."""
+    username = forms.CharField(max_length=254,
+                               widget=forms.TextInput({
+                                   'class': 'form-control',
+                                   'placeholder': 'User name'}))
+    password = forms.CharField(label="Password",
+                               widget=forms.PasswordInput({
+                                   'class': 'form-control',
+                                   'placeholder': 'Password'}))
