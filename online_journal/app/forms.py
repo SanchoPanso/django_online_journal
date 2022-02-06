@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm
 
+
 class AnketaForm(forms.Form):
     name = forms.CharField(label='Ваше имя', min_length=2, max_length=100)
     city = forms.CharField(label='Ваш город', min_length=2, max_length=100)
