@@ -2,7 +2,8 @@ from datetime import datetime
 from django.shortcuts import render, redirect
 from django.http import HttpRequest
 from django.contrib.auth.forms import UserCreationForm
-from .forms import AnketaForm
+from .forms import AnketaForm, CommentForm
+from .models import Comment, Blog
 
 
 def home(request):
@@ -115,3 +116,22 @@ def registration(request):
                 'year': datetime.now().year,
                 }
             )
+
+
+def blogpost(request, parameter):
+    """Renders the blogpost page"""
+    post_1 = Blog.objects.get(id=parameter)
+    comments = Comment.objects.filter(post=parameter)
+
+    ###
+
+
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/blogpost.html',
+        {
+            'post_1': post_1,
+            'year': datetime.now().year,
+        }
+    )
