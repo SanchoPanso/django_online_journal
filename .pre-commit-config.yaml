@@ -1,0 +1,15 @@
+repos:
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: master
+    hooks:
+      - id: commitizen
+        stages: [commit-msg]
+
+#repos:
+#- hooks:
+#  - id: commitizen
+#    stages:
+#    - commit-msg
+#  repo: https://github.com/commitizen-tools/commitizen
+#  rev: v2.20.5
+
