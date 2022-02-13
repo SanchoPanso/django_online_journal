@@ -9,18 +9,19 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('contact/', views.contact, name='contact'),
     path('about/', views.about, name='about'),
-    path('login/',
-         LoginView.as_view
-         (
-             template_name='app/login.html',
-             authentication_form=forms.BootstrapAuthenticationForm,
-             extra_context=
-             {
-                 'title': 'Log in',
-                 'year': datetime.now().year,
-             }
-         ),
-         name='login'),
     path('anketa/', views.anketa, name='anketa'),
+    path('blog/', views.blog, name='blog'),
     path(r'registration/', views.registration, name='registration'),
+    path('login/',
+             LoginView.as_view
+             (
+                 template_name='app/login.html',
+                 authentication_form=forms.BootstrapAuthenticationForm,
+                 extra_context=
+                 {
+                     'title': 'Log in',
+                     'year': datetime.now().year,
+                 }
+             ),
+             name='login'),
 ]
