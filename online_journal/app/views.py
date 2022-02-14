@@ -118,7 +118,7 @@ def registration(request):
             )
 
 
-def blog(request):
+def blog(request,):
     """Renders the blog page."""
     posts = Blog.objects.all()
     # и запрос на выбор всех статей из модели
@@ -137,11 +137,9 @@ def blog(request):
 def blogpost(request, parameter):
     """Renders the blogpost page"""
     post_1 = Blog.objects.get(id=parameter)
-    comments = Comment.objects.filter(post=parameter)
+    # comments = Comment.objects.filter(post=parameter)
 
     ###
-
-
     assert isinstance(request, HttpRequest)
     return render(
         request,

@@ -11,6 +11,7 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('anketa/', views.anketa, name='anketa'),
     path('blog/', views.blog, name='blog'),
+    path(r'<parameter>/', views.blogpost, name='blogpost'),
     path(r'registration/', views.registration, name='registration'),
     path('login/',
              LoginView.as_view

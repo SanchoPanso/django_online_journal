@@ -26,6 +26,7 @@ urlpatterns = [
     path('contact/', include('app.urls')),
     path('about/',  include('app.urls')),
     path('blog/', include('app.urls')),
+    path(r'<parameter>/', include('app.urls')),
     path('login/', include('app.urls')),
     path('anketa/', include('app.urls')),
     path('logout/', LogoutView.as_view(next_page='/'), name='logout'),
